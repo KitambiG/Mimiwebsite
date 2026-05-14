@@ -112,7 +112,7 @@ export function ForgotPasswordPage() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full px-6 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all"
+                className="w-full px-4 py-3 sm:px-6 sm:py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-semibold shadow-lg hover:shadow-2xl transition-all text-sm sm:text-base"
               >
                 Send Reset Instructions
               </motion.button>

@@ -247,13 +247,13 @@ export function Footer() {
               </motion.button>
             </Link>
 
-            <Link to="/get-started">
+            <Link to="/contact-sales">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full mt-3 px-6 py-4 bg-white/5 border border-white/20 text-white rounded-xl font-semibold hover:bg-white/10 hover:border-white/30 transition-all"
               >
-                Start Free Trial
+                Get Pricing
               </motion.button>
             </Link>
           </motion.div>

@@ -155,7 +155,7 @@ export function AboutPage() {
       </section>
 
       {/* The Challenge Section */}
-      <section className="py-20 bg-gradient-to-b from-background to-accent/20 dark:from-background dark:to-card/20" style={{ perspective: "2000px" }}>
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background to-accent/20 dark:from-background dark:to-card/20" style={{ perspective: "2000px" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -232,7 +232,7 @@ export function AboutPage() {
       </section>
 
       {/* The Solution Section */}
-      <section className="py-20 bg-gradient-to-b from-accent/20 to-background dark:from-card/20 dark:to-background" style={{ perspective: "2000px" }}>
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-accent/20 to-background dark:from-card/20 dark:to-background" style={{ perspective: "2000px" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -363,7 +363,7 @@ export function AboutPage() {
       </section>
 
       {/* Mimi Channel Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white relative overflow-hidden" style={{ perspective: "2000px" }}>
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary to-secondary text-white relative overflow-hidden" style={{ perspective: "2000px" }}>
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
 
@@ -469,7 +469,7 @@ export function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-background" style={{ perspective: "2000px" }}>
+      <section className="py-12 sm:py-16 md:py-20 bg-background" style={{ perspective: "2000px" }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             variants={slideFromBehindVariants}

@@ -13,8 +13,6 @@ const packages = [
   {
     id: 'basic',
     name: 'Basic',
-    price: '200,000',
-    period: '/month',
     description: 'Perfect for small guest houses',
     features: [
       'Up to 10 rooms',
@@ -28,8 +26,6 @@ const packages = [
   {
     id: 'professional',
     name: 'Professional',
-    price: '450,000',
-    period: '/month',
     description: 'Ideal for hotels and lodges',
     features: [
       'Up to 50 rooms',
@@ -44,8 +40,6 @@ const packages = [
   {
     id: 'enterprise',
     name: 'Enterprise',
-    price: 'Custom',
-    period: '',
     description: 'For large resorts',
     features: [
       'Unlimited rooms & properties',
@@ -116,21 +110,21 @@ export function Payment() {
             </span>
 
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Start Your 10-Day Free Trial
+              Request Your Custom Pricing Quote
             </h1>
 
             <p className="text-lg text-muted-foreground mb-4">
-              Fill in your details below and receive your invoice with payment instructions via email.
+              Fill in your property details below and our sales team will send you a personalized pricing quote tailored to your needs.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span className="text-foreground">10-day free trial</span>
+                <span className="text-foreground">10-day free trial included</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
-                <span className="text-foreground">Invoice sent instantly</span>
+                <span className="text-foreground">Custom pricing quote</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-primary" />
@@ -178,10 +172,8 @@ export function Payment() {
                         )}
                       </div>
 
-                      <div className="flex items-baseline gap-1 mb-4">
-                        <span className="text-sm text-muted-foreground">TZS</span>
-                        <span className="text-3xl font-bold text-foreground">{pkg.price}</span>
-                        <span className="text-sm text-muted-foreground">{pkg.period}</span>
+                      <div className="mb-4 py-3">
+                        <span className="text-lg font-semibold text-primary">Pricing on request</span>
                       </div>
 
                       <ul className="space-y-2">
@@ -206,19 +198,19 @@ export function Payment() {
                   <ol className="space-y-3 text-sm text-muted-foreground">
                     <li className="flex gap-3">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">1</span>
-                      <span>Submit your details</span>
+                      <span>Submit your property details</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">2</span>
-                      <span>Receive invoice via email</span>
+                      <span>Our team reviews and prepares custom pricing</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">3</span>
-                      <span>Complete payment to bank account</span>
+                      <span>Receive personalized quote & invoice via email</span>
                     </li>
                     <li className="flex gap-3">
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">4</span>
-                      <span>Get instant access & start your trial</span>
+                      <span>Complete payment & get instant access with your 10-day trial</span>
                     </li>
                   </ol>
                 </div>
@@ -418,19 +410,12 @@ export function Payment() {
                     <h3 className="text-sm font-semibold text-foreground uppercase tracking-wide mb-4">Order Summary</h3>
 
                     <div className="p-6 rounded-xl bg-accent/30 dark:bg-card/50 backdrop-blur-xl border border-border/50 shadow-lg">
-                      <div className="flex items-center justify-between mb-4">
-                        <div>
+                      <div className="mb-4">
+                        <div className="flex items-center justify-between mb-2">
                           <p className="font-semibold text-foreground">{selectedPlan?.name} Plan</p>
-                          <p className="text-sm text-muted-foreground">{selectedPlan?.description}</p>
+                          <span className="text-lg font-semibold text-primary">Pricing on request</span>
                         </div>
-                        <div className="text-right">
-                          <p className="text-2xl font-bold text-foreground">
-                            {selectedPlan?.price === 'Custom' ? 'Custom' : `${selectedPlan?.price} TZS`}
-                          </p>
-                          {selectedPlan?.period && (
-                            <p className="text-sm text-muted-foreground">{selectedPlan.period}</p>
-                          )}
-                        </div>
+                        <p className="text-sm text-muted-foreground">{selectedPlan?.description}</p>
                       </div>
 
                       <div className="pt-4 border-t border-border">
@@ -445,15 +430,15 @@ export function Payment() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl font-medium group"
+                    className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:shadow-2xl transition-all shadow-lg font-medium group"
                   >
-                    <CreditCard className="w-5 h-5" />
-                    Submit & Get Invoice
+                    <Send className="w-5 h-5" />
+                    Request Custom Pricing Quote
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
 
                   <p className="text-xs text-muted-foreground text-center">
-                    By submitting, you agree to receive an invoice with payment instructions. No payment will be charged during your 10-day trial period.
+                    By submitting, you agree to be contacted by our sales team with a personalized quote. No payment will be charged during your 10-day trial period.
                   </p>
                 </form>
               </div>
@@ -489,12 +474,12 @@ export function Payment() {
 
                 {/* Title */}
                 <h3 className="text-2xl font-bold text-foreground text-center mb-4">
-                  Invoice Sent Successfully!
+                  Quote Request Submitted Successfully!
                 </h3>
 
                 {/* Message */}
                 <p className="text-muted-foreground text-center mb-6">
-                  Your invoice with payment instructions has been sent to:
+                  Our sales team will prepare your custom pricing quote and send it to:
                 </p>
 
                 {/* Email Display/Edit */}
@@ -550,11 +535,11 @@ export function Payment() {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-start gap-3 text-sm text-muted-foreground">
                     <FileText className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p>Check your inbox for the invoice with bank account details and payment instructions.</p>
+                    <p>Our sales team will review your property details and prepare a custom pricing quote tailored to your specific needs.</p>
                   </div>
                   <div className="flex items-start gap-3 text-sm text-muted-foreground">
                     <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p>After payment, your account will be activated and you can start using Mimi App immediately.</p>
+                    <p>You'll receive your personalized quote and invoice within 24 hours. After payment, your account will be activated with a 10-day free trial.</p>
                   </div>
                 </div>
 

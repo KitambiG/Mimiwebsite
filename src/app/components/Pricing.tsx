@@ -143,14 +143,14 @@ export function Pricing() {
                   </Link>
                 ) : (
                   <Link
-                    to="/get-started"
+                    to="/contact-sales"
                     className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-300 mb-8 flex items-center justify-center ${
                       plan.popular
                         ? 'bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl'
                         : 'bg-accent text-accent-foreground hover:bg-accent/80 border border-border'
                     }`}
                   >
-                    Get Started
+                    Get Pricing
                   </Link>
                 )}
 

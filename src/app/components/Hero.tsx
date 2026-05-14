@@ -31,19 +31,19 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Link to="/book-demo" className="px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group">
+              <Link to="/book-demo" className="px-6 py-3 sm:px-8 sm:py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group text-sm sm:text-base">
                 Book Demo
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
-              <Link to="/get-started" className="px-8 py-4 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
-                Get Started
+              <Link to="/contact-sales" className="px-6 py-3 sm:px-8 sm:py-4 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/90 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-sm sm:text-base">
+                Get Pricing
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-6 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-sm">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <Calendar className="w-5 h-5 text-primary" />
                 </div>
                 <div>
@@ -52,7 +52,7 @@ export function Hero() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
                   <Building2 className="w-5 h-5 text-secondary" />
                 </div>
                 <div>

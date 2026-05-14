@@ -8,8 +8,6 @@ import logoDark from '../../imports/MimiApp_TextWhite.png';
 const plans = [
   {
     name: 'Basic',
-    price: '200,000',
-    period: '/month',
     description: 'Perfect for small guest houses and bed & breakfasts',
     features: [
       'Up to 10 rooms',
@@ -24,8 +22,6 @@ const plans = [
   },
   {
     name: 'Professional',
-    price: '450,000',
-    period: '/month',
     description: 'Ideal for hotels and lodges with multiple rooms',
     features: [
       'Up to 50 rooms',
@@ -42,8 +38,6 @@ const plans = [
   },
   {
     name: 'Enterprise',
-    price: 'Custom',
-    period: '',
     description: 'For large resorts and property management companies',
     features: [
       'Unlimited rooms & properties',
@@ -109,11 +103,11 @@ export function PricingPage() {
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Simple, Transparent Pricing
+              Flexible Plans for Every Property
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-              Choose the perfect plan for your property. Start with a 10-day free trial - no credit card required.
+              Choose the perfect plan for your property. Contact our sales team to get custom pricing tailored to your specific needs.
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 text-sm">
@@ -135,9 +129,9 @@ export function PricingPage() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {plans.map((plan, index) => (
               <motion.div
                 key={index}
@@ -168,41 +162,20 @@ export function PricingPage() {
                   <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
 
                   {/* Description */}
-                  <p className="text-sm text-muted-foreground mb-6">{plan.description}</p>
-
-                  {/* Price */}
-                  <div className="mb-8">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-sm text-muted-foreground">TZS</span>
-                      <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-                      <span className="text-sm text-muted-foreground">{plan.period}</span>
-                    </div>
-                  </div>
+                  <p className="text-sm text-muted-foreground mb-8">{plan.description}</p>
 
                   {/* CTA Button */}
-                  {plan.name === 'Enterprise' ? (
-                    <Link
-                      to="/contact-sales"
-                      className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-300 mb-8 flex items-center justify-center ${
-                        plan.popular
-                          ? 'bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl'
-                          : 'bg-accent text-accent-foreground hover:bg-accent/80 border border-border'
-                      }`}
-                    >
-                      Contact Sales
-                    </Link>
-                  ) : (
-                    <Link
-                      to="/get-started"
-                      className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-300 mb-8 flex items-center justify-center ${
-                        plan.popular
-                          ? 'bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl'
-                          : 'bg-accent text-accent-foreground hover:bg-accent/80 border border-border'
-                      }`}
-                    >
-                      Start Free Trial
-                    </Link>
-                  )}
+                  <Link
+                    to="/contact-sales"
+                    className={`w-full py-3 px-4 sm:px-6 rounded-lg font-medium transition-all duration-300 mb-8 flex items-center justify-center gap-2 text-sm sm:text-base ${
+                      plan.popular
+                        ? 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-2xl shadow-lg'
+                        : 'bg-card border-2 border-border text-foreground hover:border-primary/50 hover:shadow-lg'
+                    }`}
+                  >
+                    Get Pricing
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
 
                   {/* Features */}
                   <div className="space-y-4">
@@ -230,10 +203,10 @@ export function PricingPage() {
             className="text-center mt-12 p-6 rounded-xl bg-accent/30 dark:bg-card/50 backdrop-blur-xl border border-border/50 shadow-lg"
           >
             <p className="text-muted-foreground mb-4">
-              All prices are in Tanzanian Shillings (TZS) and billed monthly. Save up to 20% with annual billing.
+              Pricing is customized based on your property size, features needed, and business requirements. Contact our sales team to receive a personalized quote tailored to your needs.
             </p>
             <Link to="/contact-sales" className="text-primary hover:text-primary/80 font-medium inline-flex items-center gap-2">
-              Need a custom plan? Contact our sales team
+              Get Your Custom Pricing Quote
               <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
@@ -241,7 +214,7 @@ export function PricingPage() {
       </section>
 
       {/* FAQs */}
-      <section className="py-20 bg-accent/20 dark:bg-card/20">
+      <section className="py-12 sm:py-16 md:py-20 bg-accent/20 dark:bg-card/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

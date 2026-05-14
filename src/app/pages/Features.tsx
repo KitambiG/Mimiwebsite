@@ -2,235 +2,148 @@ import { motion } from 'motion/react';
 import {
   Calendar, Users, Globe, CreditCard, BarChart3, Smartphone,
   Building2, ClipboardCheck, Shield, Bell, Wifi, Cloud,
-  CheckCircle2, ArrowRight, Zap, Lock, TrendingUp
+  CheckCircle2, ArrowRight, Zap, Lock, TrendingUp, Check, X
 } from 'lucide-react';
 import { Link } from 'react-router';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
-import logoDark from '../../imports/MimiApp_TextWhite.png';
 
-const featureCategories = [
+const plans = ['Basic', 'Professional', 'Enterprise'];
+
+const featureGroups = [
   {
-    title: 'Booking & Reservations',
-    description: 'Streamline your booking process with powerful reservation management tools',
+    category: 'Booking & Reservations',
     icon: Calendar,
-    color: 'from-primary to-primary/70',
+    color: 'from-blue-500 to-cyan-500',
     features: [
-      {
-        icon: Calendar,
-        title: 'Smart Reservation System',
-        description: 'Manage all bookings from one central calendar with real-time availability updates across all channels.',
-      },
-      {
-        icon: Globe,
-        title: 'Online Booking Engine',
-        description: 'Accept direct bookings through your website with instant confirmations and automated email notifications.',
-      },
-      {
-        icon: Bell,
-        title: 'Automated Reminders',
-        description: 'Send automatic booking confirmations, check-in reminders, and follow-up messages to guests.',
-      },
-      {
-        icon: Wifi,
-        title: 'Channel Management',
-        description: 'Sync your availability across multiple booking platforms to avoid double bookings and maximize occupancy.',
-      },
+      { name: 'Smart Reservation System', basic: true, professional: true, enterprise: true },
+      { name: 'Online Booking Engine', basic: true, professional: true, enterprise: true },
+      { name: 'Automated Reminders', basic: true, professional: true, enterprise: true },
+      { name: 'Channel Management', basic: false, professional: true, enterprise: true },
+      { name: 'Real-time Availability Sync', basic: false, professional: true, enterprise: true },
+      { name: 'Custom Booking Rules', basic: false, professional: false, enterprise: true },
     ],
   },
   {
-    title: 'Guest Management',
-    description: 'Build lasting relationships with personalized guest experiences',
+    category: 'Guest Management',
     icon: Users,
-    color: 'from-secondary to-secondary/70',
+    color: 'from-purple-500 to-pink-500',
     features: [
-      {
-        icon: Users,
-        title: 'Guest Profiles',
-        description: 'Store detailed guest information, preferences, and booking history for personalized service.',
-      },
-      {
-        icon: CheckCircle2,
-        title: 'Check-In / Check-Out',
-        description: 'Fast and efficient check-in/check-out process with digital registration and payment processing.',
-      },
-      {
-        icon: Bell,
-        title: 'Guest Communication',
-        description: 'Send automated messages, special offers, and important updates directly to guests via SMS or email.',
-      },
-      {
-        icon: TrendingUp,
-        title: 'Loyalty Programs',
-        description: 'Reward repeat guests with points, discounts, and special perks to increase retention.',
-      },
+      { name: 'Guest Profiles', basic: true, professional: true, enterprise: true },
+      { name: 'Check-In / Check-Out', basic: true, professional: true, enterprise: true },
+      { name: 'Guest Communication (SMS/Email)', basic: true, professional: true, enterprise: true },
+      { name: 'Loyalty Programs', basic: false, professional: true, enterprise: true },
+      { name: 'Guest Analytics', basic: false, professional: true, enterprise: true },
+      { name: 'VIP Guest Management', basic: false, professional: false, enterprise: true },
     ],
   },
   {
-    title: 'Property Operations',
-    description: 'Manage daily operations efficiently across all properties',
+    category: 'Property Operations',
     icon: Building2,
-    color: 'from-chart-3 to-chart-3/70',
+    color: 'from-orange-500 to-red-500',
     features: [
-      {
-        icon: Building2,
-        title: 'Multi-Property Dashboard',
-        description: 'Monitor and manage multiple properties from a single unified dashboard with real-time updates.',
-      },
-      {
-        icon: ClipboardCheck,
-        title: 'Housekeeping Management',
-        description: 'Coordinate room cleaning schedules, track room status, and assign tasks to housekeeping staff.',
-      },
-      {
-        icon: Shield,
-        title: 'User Roles & Permissions',
-        description: 'Set up different access levels for staff with customizable permissions for each role.',
-      },
-      {
-        icon: Zap,
-        title: 'Maintenance Tracking',
-        description: 'Log and track maintenance requests, schedule repairs, and monitor property condition.',
-      },
+      { name: 'Multi-Property Dashboard', basic: false, professional: true, enterprise: true },
+      { name: 'Housekeeping Management', basic: true, professional: true, enterprise: true },
+      { name: 'User Roles & Permissions', basic: true, professional: true, enterprise: true },
+      { name: 'Maintenance Tracking', basic: false, professional: true, enterprise: true },
+      { name: 'Staff Scheduling', basic: false, professional: true, enterprise: true },
+      { name: 'Inventory Management', basic: false, professional: false, enterprise: true },
     ],
   },
   {
-    title: 'Financial Management',
-    description: 'Take control of your finances with comprehensive payment tracking',
+    category: 'Financial Management',
     icon: CreditCard,
-    color: 'from-chart-4 to-chart-4/70',
+    color: 'from-emerald-500 to-teal-500',
     features: [
-      {
-        icon: CreditCard,
-        title: 'Payment Processing',
-        description: 'Accept multiple payment methods including cash, credit cards, and M-Pesa mobile payments.',
-      },
-      {
-        icon: BarChart3,
-        title: 'Invoice Generation',
-        description: 'Create and send professional invoices automatically with customizable templates.',
-      },
-      {
-        icon: TrendingUp,
-        title: 'Revenue Management',
-        description: 'Track revenue across properties, rooms, and services with detailed financial breakdowns.',
-      },
-      {
-        icon: CheckCircle2,
-        title: 'Expense Tracking',
-        description: 'Monitor operational expenses, supplier payments, and maintain complete financial records.',
-      },
+      { name: 'Payment Processing', basic: true, professional: true, enterprise: true },
+      { name: 'Invoice Generation', basic: true, professional: true, enterprise: true },
+      { name: 'M-Pesa Integration', basic: true, professional: true, enterprise: true },
+      { name: 'Revenue Management', basic: false, professional: true, enterprise: true },
+      { name: 'Expense Tracking', basic: false, professional: true, enterprise: true },
+      { name: 'Custom Financial Reports', basic: false, professional: false, enterprise: true },
     ],
   },
   {
-    title: 'Reports & Analytics',
-    description: 'Make data-driven decisions with powerful insights',
+    category: 'Reports & Analytics',
     icon: BarChart3,
-    color: 'from-chart-5 to-chart-5/70',
+    color: 'from-violet-500 to-purple-500',
     features: [
-      {
-        icon: BarChart3,
-        title: 'Occupancy Reports',
-        description: 'Track occupancy rates, average daily rates, and revenue per available room in real-time.',
-      },
-      {
-        icon: TrendingUp,
-        title: 'Revenue Analytics',
-        description: 'Visualize revenue trends, identify peak seasons, and optimize pricing strategies.',
-      },
-      {
-        icon: Users,
-        title: 'Guest Analytics',
-        description: 'Understand guest behavior, preferences, and demographics to improve service quality.',
-      },
-      {
-        icon: CheckCircle2,
-        title: 'Custom Reports',
-        description: 'Generate custom reports for any metric you need with exportable data in multiple formats.',
-      },
+      { name: 'Occupancy Reports', basic: true, professional: true, enterprise: true },
+      { name: 'Revenue Analytics', basic: true, professional: true, enterprise: true },
+      { name: 'Guest Analytics', basic: false, professional: true, enterprise: true },
+      { name: 'Custom Reports', basic: false, professional: true, enterprise: true },
+      { name: 'Advanced Forecasting', basic: false, professional: false, enterprise: true },
+      { name: 'API Data Export', basic: false, professional: false, enterprise: true },
     ],
   },
   {
-    title: 'Mobile & Cloud',
-    description: 'Access your system anywhere, anytime from any device',
+    category: 'Mobile & Cloud',
     icon: Smartphone,
-    color: 'from-primary to-secondary',
+    color: 'from-sky-500 to-blue-500',
     features: [
-      {
-        icon: Smartphone,
-        title: 'Mobile Responsive',
-        description: 'Fully optimized mobile interface works perfectly on smartphones and tablets.',
-      },
-      {
-        icon: Cloud,
-        title: 'Cloud-Based',
-        description: 'All your data is securely stored in the cloud with automatic backups and 99.9% uptime.',
-      },
-      {
-        icon: Lock,
-        title: 'Bank-Level Security',
-        description: 'Enterprise-grade encryption protects your sensitive guest and financial data.',
-      },
-      {
-        icon: Wifi,
-        title: 'Real-Time Sync',
-        description: 'Instant updates across all devices and platforms - always stay connected with your team.',
-      },
+      { name: 'Mobile Responsive Interface', basic: true, professional: true, enterprise: true },
+      { name: 'Cloud-Based Storage', basic: true, professional: true, enterprise: true },
+      { name: 'Bank-Level Security', basic: true, professional: true, enterprise: true },
+      { name: 'Real-Time Sync', basic: true, professional: true, enterprise: true },
+      { name: 'Offline Mode', basic: false, professional: true, enterprise: true },
+      { name: 'White-Label Solution', basic: false, professional: false, enterprise: true },
     ],
   },
-];
-
-const quickBenefits = [
-  'Reduce manual work by 70%',
-  'Increase bookings by 40%',
-  'Improve guest satisfaction',
-  'Save 10+ hours per week',
-  'Real-time visibility',
-  'Scale effortlessly',
 ];
 
 export function FeaturesPage() {
   return (
     <div className="min-h-screen bg-background">
-<Header />
+      <Header />
 
-      {/* Hero Section */}
-      <section className="relative pt-20 pb-16 bg-gradient-to-br from-card via-background to-card/50 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-subtle" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse-subtle" style={{ animationDelay: '1s' }} />
+      {/* Hero Section with Safari Image */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <ImageWithFallback
+            src="https://images.unsplash.com/photo-1516426122078-c23e76319801?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
+            alt="Tanzania Safari Landscape"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-900/90 to-gray-900/95 backdrop-blur-sm" />
+        </div>
+
+        {/* Animated orbs */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-subtle" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse-subtle" style={{ animationDelay: '1s' }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
+            <span className="inline-block px-4 py-2 rounded-full bg-primary/20 backdrop-blur-xl border border-primary/30 text-primary mb-6">
               All Features
             </span>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Everything You Need to Run Your Hospitality Business
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
               Mimi App provides comprehensive tools designed specifically for Tanzania's tourism industry.
               From booking management to financial reporting, we've got you covered.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {quickBenefits.map((benefit, index) => (
+              {['Up to 50 rooms', 'Multi-property', 'M-Pesa integration', 'Real-time sync', 'Mobile access', 'Cloud-based'].map((benefit, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="px-4 py-2 rounded-full bg-card border border-border flex items-center gap-2"
+                  className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center gap-2"
                 >
                   <CheckCircle2 className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-foreground">{benefit}</span>
+                  <span className="text-sm text-white">{benefit}</span>
                 </motion.div>
               ))}
             </div>
@@ -238,63 +151,192 @@ export function FeaturesPage() {
         </div>
       </section>
 
-      {/* Feature Categories */}
-      {featureCategories.map((category, categoryIndex) => (
-        <section
-          key={categoryIndex}
-          className={`py-20 ${categoryIndex % 2 === 0 ? 'bg-background' : 'bg-accent/20 dark:bg-card/20'}`}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <div className={`inline-flex w-16 h-16 rounded-xl bg-gradient-to-br ${category.color} items-center justify-center mb-6`}>
-                <category.icon className="w-8 h-8 text-white" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                {category.title}
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                {category.description}
-              </p>
-            </motion.div>
+      {/* Feature Comparison Table */}
+      <section className="py-20 bg-gradient-to-b from-background to-accent/10 dark:from-background dark:to-card/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Compare Plans & Features
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Choose the perfect plan for your property size and needs
+            </p>
+          </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {category.features.map((feature, featureIndex) => (
+          {/* Desktop Table */}
+          <div className="hidden lg:block">
+            <div className="bg-card/70 backdrop-blur-xl border border-border/50 rounded-3xl shadow-2xl overflow-hidden">
+              {/* Table Header */}
+              <div className="grid grid-cols-4 gap-4 p-6 bg-gradient-to-r from-primary/10 to-secondary/10 border-b border-border/50">
+                <div className="text-lg font-bold text-foreground">Features</div>
+                {plans.map((plan, index) => (
+                  <div key={index} className="text-center">
+                    <div className={`text-xl font-bold ${index === 1 ? 'text-primary' : 'text-foreground'}`}>
+                      {plan}
+                    </div>
+                    {index === 1 && (
+                      <span className="inline-block mt-1 px-3 py-1 bg-primary text-white text-xs rounded-full">
+                        Most Popular
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Feature Groups */}
+              {featureGroups.map((group, groupIndex) => (
                 <motion.div
-                  key={featureIndex}
-                  initial={{ opacity: 0, y: 30 }}
+                  key={groupIndex}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
-                  className="group p-8 rounded-2xl border border-border/50 bg-card/70 backdrop-blur-xl hover:border-primary/30 hover:shadow-2xl transition-all duration-300 shadow-lg"
+                  transition={{ duration: 0.5, delay: groupIndex * 0.1 }}
                 >
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-7 h-7 text-white" />
+                  {/* Category Header */}
+                  <div className="px-6 py-4 bg-accent/20 dark:bg-card/20 border-b border-border/50">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${group.color} flex items-center justify-center`}>
+                        <group.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold text-foreground">{group.category}</h3>
+                    </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {feature.title}
-                  </h3>
-
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
+                  {/* Features */}
+                  {group.features.map((feature, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className={`grid grid-cols-4 gap-4 px-6 py-4 border-b border-border/30 hover:bg-accent/20 transition-colors ${
+                        featureIndex === group.features.length - 1 ? 'border-b-2 border-border/50' : ''
+                      }`}
+                    >
+                      <div className="flex items-center text-foreground">{feature.name}</div>
+                      <div className="flex items-center justify-center">
+                        {feature.basic ? (
+                          <CheckCircle2 className="w-6 h-6 text-primary" />
+                        ) : (
+                          <X className="w-6 h-6 text-muted-foreground/30" />
+                        )}
+                      </div>
+                      <div className="flex items-center justify-center">
+                        {feature.professional ? (
+                          <CheckCircle2 className="w-6 h-6 text-primary" />
+                        ) : (
+                          <X className="w-6 h-6 text-muted-foreground/30" />
+                        )}
+                      </div>
+                      <div className="flex items-center justify-center">
+                        {feature.enterprise ? (
+                          <CheckCircle2 className="w-6 h-6 text-primary" />
+                        ) : (
+                          <X className="w-6 h-6 text-muted-foreground/30" />
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </motion.div>
               ))}
+
+              {/* CTA Footer */}
+              <div className="grid grid-cols-4 gap-4 p-6 bg-gradient-to-r from-primary/5 to-secondary/5">
+                <div></div>
+                {plans.map((plan, index) => (
+                  <div key={index} className="text-center">
+                    <Link
+                      to="/contact-sales"
+                      className={`block px-6 py-3 rounded-xl font-semibold transition-all ${
+                        index === 1
+                          ? 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-xl shadow-lg'
+                          : 'bg-card border-2 border-border text-foreground hover:border-primary/50 hover:shadow-lg'
+                      }`}
+                    >
+                      Get Pricing
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
-      ))}
 
-      {/* Feature Showcase with Image */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 dark:from-primary/10 dark:via-background dark:to-secondary/10">
+          {/* Mobile/Tablet Cards */}
+          <div className="lg:hidden space-y-8">
+            {plans.map((plan, planIndex) => (
+              <motion.div
+                key={planIndex}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-card/70 backdrop-blur-xl border-2 border-border/50 rounded-3xl shadow-xl overflow-hidden"
+              >
+                {/* Plan Header */}
+                <div className={`p-6 ${planIndex === 1 ? 'bg-gradient-to-r from-primary/20 to-secondary/20' : 'bg-accent/20'}`}>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">{plan}</h3>
+                  {planIndex === 1 && (
+                    <span className="inline-block px-3 py-1 bg-primary text-white text-xs rounded-full">
+                      Most Popular
+                    </span>
+                  )}
+                </div>
+
+                {/* Features by Category */}
+                <div className="p-6 space-y-6">
+                  {featureGroups.map((group, groupIndex) => (
+                    <div key={groupIndex}>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${group.color} flex items-center justify-center`}>
+                          <group.icon className="w-5 h-5 text-white" />
+                        </div>
+                        <h4 className="font-bold text-foreground">{group.category}</h4>
+                      </div>
+                      <div className="space-y-3 ml-13">
+                        {group.features.map((feature, featureIndex) => {
+                          const hasFeature = planIndex === 0 ? feature.basic : planIndex === 1 ? feature.professional : feature.enterprise;
+                          return (
+                            <div key={featureIndex} className="flex items-start gap-3">
+                              {hasFeature ? (
+                                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                              ) : (
+                                <X className="w-5 h-5 text-muted-foreground/30 flex-shrink-0 mt-0.5" />
+                              )}
+                              <span className={hasFeature ? 'text-foreground' : 'text-muted-foreground/50'}>{feature.name}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <div className="p-6 border-t border-border/50">
+                  <Link
+                    to="/contact-sales"
+                    className={`block w-full px-6 py-4 rounded-xl font-semibold text-center transition-all ${
+                      planIndex === 1
+                        ? 'bg-gradient-to-r from-primary to-secondary text-white hover:shadow-xl shadow-lg'
+                        : 'bg-card border-2 border-border text-foreground hover:border-primary/50 hover:shadow-lg'
+                    }`}
+                  >
+                    Get Pricing
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Showcase with Safari Images */}
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -302,24 +344,23 @@ export function FeaturesPage() {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
-                See It In Action
+                Built for Tanzania
               </span>
 
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Beautiful, Intuitive Interface Built for Hospitality
+                Perfect for Safari Lodges, Hotels & Resorts
               </h2>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Our user-friendly dashboard makes it easy for your entire team to get started.
-                No technical knowledge required - if you can use a smartphone, you can use Mimi App.
+                Whether you manage a luxury safari lodge in Serengeti, a beach resort in Zanzibar, or a boutique hotel in Arusha, Mimi App adapts to your unique needs.
               </p>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4">
                 {[
-                  'Clean, modern design optimized for speed',
-                  'Intuitive navigation that makes sense',
-                  'Customizable to match your workflow',
-                  'Works on desktop, tablet, and mobile',
+                  'Manage safari bookings and excursions',
+                  'Handle seasonal pricing automatically',
+                  'Sync with international OTAs',
+                  'Mobile access from remote locations',
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
@@ -327,14 +368,6 @@ export function FeaturesPage() {
                   </div>
                 ))}
               </div>
-
-              <Link
-                to="/book-demo"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl group"
-              >
-                Book a Demo
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
             </motion.div>
 
             <motion.div
@@ -344,12 +377,65 @@ export function FeaturesPage() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/50 backdrop-blur-xl bg-card/20">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border">
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1759038085950-1234ca8f5fed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHJlY2VwdGlvbiUyMGRlc2slMjBob3NwaXRhbGl0eSUyMG1hbmFnZW1lbnQlMjB0YWJsZXR8ZW58MXx8fHwxNzc4NjU3MTY3fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Mimi App Dashboard Interface"
+                  src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                  alt="Tanzania Safari Lodge"
                   className="w-full h-auto"
                 />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Second Row - Reversed */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="order-2 lg:order-1 relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border">
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1568127623945-a2a9a0a83f3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                  alt="Tanzania Wildlife Safari"
+                  className="w-full h-auto"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="order-1 lg:order-2"
+            >
+              <span className="inline-block px-4 py-2 rounded-full bg-secondary/10 text-secondary mb-6">
+                Complete Solution
+              </span>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                One Platform for All Your Operations
+              </h2>
+
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Stop juggling multiple tools and spreadsheets. Mimi App brings everything together in one intuitive dashboard designed for hospitality professionals.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: 'Properties', value: '500+' },
+                  { label: 'Rooms Managed', value: '15,000+' },
+                  { label: 'Daily Bookings', value: '2,000+' },
+                  { label: 'Happy Guests', value: '50,000+' },
+                ].map((stat, index) => (
+                  <div key={index} className="p-4 rounded-xl bg-accent/20 dark:bg-card/20 border border-border/50">
+                    <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
+                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -357,15 +443,25 @@ export function FeaturesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-20 overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 z-0">
+          <ImageWithFallback
+            src="https://images.unsplash.com/photo-1549366021-9f761d450615?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920"
+            alt="Tanzania Sunset Safari"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-secondary/95" />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Transform Your Property Management?
             </h2>
 
@@ -376,22 +472,22 @@ export function FeaturesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/book-demo"
-                className="px-8 py-4 bg-white text-primary rounded-lg hover:bg-white/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group"
+                className="px-8 py-4 bg-white text-primary rounded-xl hover:bg-white/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group font-semibold"
               >
                 Book a Free Demo
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
-                to="/#pricing"
-                className="px-8 py-4 bg-white/10 backdrop-blur-xl text-white border-2 border-white/50 rounded-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+                to="/contact-sales"
+                className="px-8 py-4 bg-white/10 backdrop-blur-xl text-white border-2 border-white/50 rounded-xl hover:bg-white/20 transition-all flex items-center justify-center gap-2 font-semibold"
               >
-                View Pricing
+                Get Pricing
               </Link>
             </div>
 
             <p className="mt-6 text-white/80 text-sm">
-              30-day free trial • No credit card required • Cancel anytime
+              10-day free trial • Custom pricing • No credit card required
             </p>
           </motion.div>
         </div>

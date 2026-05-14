@@ -103,7 +103,7 @@ export function PrivacyPage() {
       </section>
 
       {/* Content Sections */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             {sections.map((section, index) => (
