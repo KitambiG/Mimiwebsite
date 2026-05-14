@@ -21,10 +21,13 @@ export function Hero() {
             <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 text-primary border border-primary/20">
               <span className="text-sm font-medium">🇹🇿 Built for Tanzania Tourism Industry</span>
             </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Simplifying Hospitality Management in Tanzania
+             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Built  to  simplify.
             </h1>
+
+            {/* <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Simplifying Hospitality Management in Tanzania
+            </h2> */}
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
               Smart Property Management System designed for hotels, lodges, guest houses, and safari camps. Manage bookings, guests, and operations seamlessly with Mimi App.
