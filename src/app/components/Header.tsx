@@ -113,22 +113,6 @@ export function Header() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-2.5 border border-primary/50 text-primary rounded-xl hover:bg-primary/10 hover:border-primary transition-all backdrop-blur-sm relative overflow-hidden group"
-              >
-                <span className="relative z-10 font-medium">Sign Up</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.5 }}
-                />
-              </motion.div>
-            </Link>
-
-            <Link to="/book-demo">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 className="px-6 py-2.5 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-medium shadow-lg hover:shadow-2xl hover:shadow-primary/50 transition-all relative overflow-hidden group"
               >
                 <motion.div
@@ -138,7 +122,7 @@ export function Header() {
                   transition={{ duration: 0.6 }}
                 />
                 <span className="relative z-10 flex items-center gap-2">
-                  Book Demo
+                  Register
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </motion.div>
@@ -230,23 +214,10 @@ export function Header() {
                   >
                     <motion.div
                       whileTap={{ scale: 0.98 }}
-                      className="w-full px-6 py-3 border border-primary/50 text-primary rounded-xl hover:bg-primary/10 hover:border-primary transition-all text-center font-medium backdrop-blur-sm"
-                    >
-                      Sign Up Free
-                    </motion.div>
-                  </Link>
-
-                  <Link
-                    to="/book-demo"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <motion.div
-                      whileTap={{ scale: 0.98 }}
                       className="w-full px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-xl font-medium shadow-lg text-center relative overflow-hidden group"
                     >
-                      <span className="relative z-10 flex items-center justify-center gap-2">
-                        <Sparkles className="w-4 h-4" />
-                        Book Demo
+                      <span className="relative z-10 flex items-center justify-center gap-2 font-medium">
+                        Register
                       </span>
                     </motion.div>
                   </Link>

@@ -228,7 +228,7 @@ export function Footer() {
               Ready to transform your property management? Start your free trial today.
             </p>
 
-            <Link to="/book-demo">
+            <Link to="/sign-up">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -241,7 +241,7 @@ export function Footer() {
                   transition={{ duration: 0.6 }}
                 />
                 <span className="relative flex items-center justify-center gap-2">
-                  Book a Demo
+                  Register Now
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </motion.button>

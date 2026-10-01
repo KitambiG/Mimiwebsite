@@ -22,7 +22,7 @@ export function Hero() {
               <span className="text-sm font-medium">🇹🇿 Built for Tanzania Tourism Industry</span>
             </div>
              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Built  to  simplify.
+              Built  to  simplify.                       
             </h1>
 
             {/* <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
@@ -34,8 +34,8 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Link to="/book-demo" className="px-6 py-3 sm:px-8 sm:py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group text-sm sm:text-base">
-                Book Demo
+              <Link to="/sign-up" className="px-6 py-3 sm:px-8 sm:py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group text-sm sm:text-base">
+                Register Now
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 

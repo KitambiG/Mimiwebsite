@@ -496,10 +496,10 @@ export function AboutPage() {
               </Link>
 
               <Link
-                to="/book-demo"
+                to="/sign-up"
                 className="px-8 py-4 border-2 border-border bg-card hover:bg-accent rounded-xl hover:shadow-xl transition-all"
               >
-                Schedule a Demo
+                Register Now
               </Link>
             </div>
           </motion.div>

@@ -277,10 +277,10 @@ export function PricingPage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/book-demo"
+                to="/sign-up"
                 className="px-6 py-3 bg-accent text-accent-foreground rounded-lg hover:bg-accent/80 border border-border transition-all inline-flex items-center justify-center gap-2"
               >
-                Schedule a Demo
+                Register Now
               </Link>
             </div>
           </motion.div>

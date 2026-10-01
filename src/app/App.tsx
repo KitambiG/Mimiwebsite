@@ -4,7 +4,6 @@ import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { SignUpPage } from './pages/SignUp';
 import { ForgotPasswordPage } from './pages/ForgotPassword';
-import { BookDemo } from './pages/BookDemo';
 import { FeaturesPage } from './pages/Features';
 import { PricingPage } from './pages/Pricing';
 import { ContactSales } from './pages/ContactSales';
@@ -28,7 +27,6 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-          <Route path="/book-demo" element={<BookDemo />} />
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/about" element={<AboutPage />} />

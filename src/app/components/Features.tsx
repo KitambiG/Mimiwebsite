@@ -386,10 +386,10 @@ export function Features() {
             </Link>
 
             <Link
-              to="/book-demo"
+              to="/sign-up"
               className="px-8 py-4 border-2 border-border bg-card hover:bg-accent rounded-xl hover:shadow-xl transition-all duration-300 flex items-center gap-2"
             >
-              See It In Action
+              Get Started Free
               <Sparkles className="w-5 h-5" />
             </Link>
           </div>

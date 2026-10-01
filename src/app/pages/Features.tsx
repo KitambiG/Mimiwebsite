@@ -471,10 +471,10 @@ export function FeaturesPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/book-demo"
+                to="/sign-up"
                 className="px-8 py-4 bg-white text-primary rounded-xl hover:bg-white/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group font-semibold"
               >
-                Book a Free Demo
+                Register Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
