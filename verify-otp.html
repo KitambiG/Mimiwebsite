@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verify your email | Mimi</title>
+  <meta name="description" content="Verify your email to finish signing in to Mimi.">
+  <meta name="theme-color" content="#fbf9f5">
+  <link rel="icon" href="assets/img/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/get-started.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <script src="assets/js/login.js" defer></script>
+  <script src="assets/js/enquiry-config.js" defer></script>
+<script src="assets/js/get-started.js" defer></script>
+<link rel="canonical" href="https://mimiapp.co.tz/verify-otp.html">
+<meta name="robots" content="noindex,follow">
+<link rel="stylesheet" href="assets/css/auth.css">
+<script src="assets/js/auth-config.js"></script>
+<script src="assets/js/auth-theme.js"></script>
+<script src="assets/js/auth.js" defer></script>
+<link rel="stylesheet" href="assets/css/login-refresh.css">
+</head>
+<body class="login-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="login-landscape" aria-hidden="true"><img src="assets/img/login/kilimanjaro.jpg" alt="" fetchpriority="high"></div>
+  <div class="login-shell">
+    <header class="login-header">
+      <a href="index.html" aria-label="Mimi home"><img class="login-logo" src="assets/img/mimiapp-logo.png" alt="Mimi App" width="6121" height="1671"></a>
+      <nav aria-label="Login navigation"><a href="index.html">Back to website <span aria-hidden="true">↗</span></a><a href="support.html">Help &amp; support</a></nav>
+    </header>
+    <main class="login-layout" id="main">
+      <section class="login-welcome" aria-labelledby="welcome-title">
+        <p class="login-eyebrow"><span></span> YOUR STAYS, BEAUTIFULLY MANAGED</p>
+        <h1 id="welcome-title">Better stays.<br>Start with <em>you.</em></h1>
+        <p class="login-description">Less time managing. More time welcoming.<br>Bring your reservations, guests and daily operations together with Mimi.</p>
+        <ul class="login-benefits"><li><span aria-hidden="true">▦</span> Manage stays</li><li><span aria-hidden="true">♡</span> Welcome guests</li><li><span aria-hidden="true">↗</span> Grow together</li></ul>
+        <section class="destination-carousel" aria-roledescription="carousel" aria-label="Inspired by Tanzania">
+          <div class="destination-slides" aria-live="off">
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="1 of 4: Serengeti">
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>Room to explore.</h2><p>Extraordinary stays begin with a little more freedom.</p><strong>Serengeti plains</strong></div>
+              <img src="assets/img/login/serengeti.jpg" alt="Open grasslands and scattered trees on the Serengeti plains" width="960" height="720">
+            </article>
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="2 of 4: Tanzanite" hidden>
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>Every detail, a gem.</h2><p>Make every guest experience feel one of a kind.</p><strong>Tanzanite</strong></div>
+              <img class="gem-photo" src="assets/img/login/tanzanite.jpg" alt="Blue-violet Tanzanite crystals from Tanzania" width="500" height="778">
+            </article>
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="3 of 4: Mount Meru" hidden>
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>A fresh perspective.</h2><p>See your whole property. Make space for what comes next.</p><strong>Mount Meru</strong></div>
+              <img src="assets/img/login/meru.jpg" alt="Mount Meru rising above the clouds, seen from Little Meru" width="960" height="540">
+            </article>
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="4 of 4: Giraffe" hidden>
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>Stand a little taller.</h2><p>Give your hospitality the attention it deserves.</p><strong>The graceful giraffe</strong><small class="image-credit">© <a href="https://gileslaurent.com">Giles Laurent, gileslaurent.com</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></small></div>
+              <img class="giraffe-photo" src="assets/img/login/giraffe.jpg" alt="A giraffe walking in Serengeti National Park" width="500" height="889">
+            </article>
+          </div>
+          <div class="carousel-controls" hidden>
+            <div class="carousel-dots" aria-label="Choose a slide"><button aria-label="Show Serengeti plains" aria-pressed="true"></button><button aria-label="Show Tanzanite" aria-pressed="false"></button><button aria-label="Show Mount Meru" aria-pressed="false"></button><button aria-label="Show giraffe" aria-pressed="false"></button></div>
+            <div class="carousel-arrows"><button data-carousel="previous" aria-label="Previous slide">←</button><button data-carousel="pause" aria-label="Pause slideshow">Ⅱ</button><button data-carousel="next" aria-label="Next slide">→</button></div>
+          </div>
+        </section>
+      </section>
+      <section class="login-card" aria-labelledby="login-title">
+        <img class="auth-card-logo mimi-wordmark" src="assets/img/mimiapp-logo.png" alt="Mimi App" width="6121" height="1671">
+        <p class="login-greeting">ONE MORE STEP</p>
+        <h2 id="login-title">Verify your email</h2>
+        <p class="login-card-intro" id="otp-destination">Sign in first to request your verification code.</p>
+        <form class="auth-form" id="otp-form" method="post">
+          <label for="auth-code">6-digit verification code</label><input id="auth-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" minlength="6" maxlength="6" required placeholder="000000" aria-describedby="otp-help">
+          <p id="otp-help" class="auth-code-help">Enter the latest code from your email. Never share it with anyone.</p>
+          <button class="login-primary" type="submit" disabled>Verify &amp; continue →</button>
+        </form>
+        <button class="otp-resend" type="button" disabled>Resend code</button><p class="otp-timer" aria-live="off"></p>
+        <p class="auth-message" role="status" aria-live="polite"></p><p class="auth-integration-note">Authentication setup is pending. Sign-in and email codes will work after the secure backend is connected.</p><p class="agent-portal"><a href="agent-login.html">Travel partner? Agent portal ↗</a></p><noscript><p>Please enable JavaScript to sign in.</p></noscript>
+        <a class="login-help" href="login.html" data-auth-restart>← Back to login</a>
+      </section>
+    </main>
+    <footer class="login-footer">
+      <div class="login-footer-links"><a href="index.html">Website</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="about.html">About Mimi</a>
+        <details class="photo-credits"><summary>Photo credits</summary><div>
+          <p>Photos via Wikimedia Commons, displayed cropped; Kilimanjaro has a theme-dependent overlay. Photographic adaptations retain their respective licenses.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:Kilimanjaro_from_Amboseli.jpg">Kilimanjaro</a> © Sergey Pesterev / Wikimedia Commons — <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:Serengeti_-_plains.jpg">Serengeti</a> © tommorphy — <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:Tanzanite_.jpg">Tanzanite</a> © Parent Géry — <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:Mount_Meru_Tanzania_July_2025.jpg">Mount Meru</a> © AmyAbroad — <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:007_Giraffe_walking_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg">Giraffe</a> © <a href="https://gileslaurent.com">Giles Laurent, gileslaurent.com</a> — <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+        </div></details>
+      </div>
+      <p>© <span id="login-year">2026</span> Mimi is a product of Insync Technologies Company Limited</p>
+    </footer>
+  </div>
+</body>
+</html>

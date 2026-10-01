@@ -1,0 +1,30 @@
+.booking-layout{grid-template-columns:minmax(0,.95fr) minmax(0,1.1fr);gap:65px;padding:40px 0 60px;align-items:start}
+.booking-welcome{padding-top:40px}.booking-welcome h1{font-size:clamp(40px,4vw,60px)}
+.booking-card{text-align:left;padding:30px;border-radius:26px}
+.booking-card .login-greeting{margin-bottom:10px}.booking-card h2{font-size:28px;margin-bottom:8px}
+.booking-intro{font-size:12px;line-height:1.7;color:#566b5d;margin-bottom:24px}
+.booking-progress{display:flex;list-style:none;gap:10px;padding:0;margin:0 0 26px}
+.booking-progress li{display:flex;align-items:center;gap:7px;flex:1;color:#566b5d;font-size:10px;white-space:nowrap}
+.booking-progress li:not(:last-child):after{content:"";height:1px;flex:1;background:#dce6dd}
+.booking-progress b{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;border:1px solid #dce6dd;background:#f5f8f4;font-size:11px}
+.booking-progress [aria-current=step]{color:#0f654d;font-weight:700}.booking-progress [aria-current=step] b{background:#0f7a5a;color:#fff;border-color:#0f7a5a}
+.booking-progress .complete b{background:#e4f4ee;color:#0f654d;border-color:#c9e5d8}
+.booking-form fieldset{border:0;padding:0;margin:0;min-width:0}.booking-form legend{font-weight:700;font-size:15px;margin-bottom:18px;color:#183c2d}
+.booking-fields{display:grid;grid-template-columns:1fr 1fr;gap:17px 14px}.booking-field{min-width:0}.booking-field.full{grid-column:1/-1}
+.booking-field label{display:block;font-size:11px;font-weight:600;margin-bottom:7px;color:#334d40}.booking-field label span{font-weight:400;color:#566b5d}
+.booking-field input,.booking-field select,.booking-field textarea{width:100%;min-width:0;max-width:100%;border:1px solid #ccdace;background:#fcfdfb;color:#183c2d;border-radius:11px;padding:12px;font:inherit;font-size:13px;min-height:46px;box-shadow:none}
+.booking-field textarea{resize:vertical;min-height:85px}.booking-field input:focus,.booking-field select:focus,.booking-field textarea:focus{border-color:#0f7a5a}
+.booking-field input::placeholder,.booking-field textarea::placeholder{color:#667b6d;opacity:1}
+.booking-field small{display:block;font-size:10px;line-height:1.6;color:#566b5d;margin-top:6px}
+.stay-summary{margin:19px 0 0;display:flex;gap:10px;align-items:center;padding:13px 15px;background:#edf6ee;border-radius:11px;font-size:11px;color:#22563e;line-height:1.6}.stay-summary>span:first-child{font-size:20px}
+.booking-actions{display:flex;gap:12px;align-items:center;margin-top:24px}.booking-actions .login-primary{border:0;cursor:pointer;flex:1;font-family:inherit;font-size:13px;min-height:48px}
+.booking-back{background:transparent;color:#0f654d;border:1px solid #ccdace;border-radius:100px;padding:13px 18px;font-weight:600;min-height:48px}
+.booking-notice{border-top:1px solid #dce6dd;margin-top:23px;padding-top:16px;color:#566b5d;font-size:10px;line-height:1.75}.booking-notice strong{display:block;color:#856024;font-weight:600;margin-bottom:3px}
+.booking-notice a{text-decoration:underline;text-underline-offset:3px}.booking-error{font-size:12px;color:#9c382a;margin-top:15px;line-height:1.6}
+.booking-review{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px 16px;margin:0;font-size:12px;line-height:1.6}.booking-review dt{color:#566b5d}.booking-review dd{margin:0;color:#183c2d;font-weight:600;overflow-wrap:anywhere;white-space:pre-wrap}
+.booking-review-heading{padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid #dce6dd}.booking-review-heading h3{font-size:16px;margin-bottom:6px}.booking-review-heading p{font-size:11px;line-height:1.7;color:#566b5d}
+.booking-saved{font-size:11px;color:#0f654d;margin-top:12px;line-height:1.7}
+.booking-card .booking-support{font-size:11px;text-align:center;margin-top:17px;color:#566b5d}.booking-support a{color:#0f654d;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1050px){.booking-layout{gap:35px}.booking-card{padding:25px}.booking-welcome h1{font-size:46px}.booking-progress{gap:7px}}
+@media(max-width:760px){.booking-layout{grid-template-columns:1fr;max-width:540px;gap:25px;padding-top:15px}.booking-welcome{padding:0}.booking-welcome h1{font-size:44px}.booking-welcome .destination-carousel{display:none}.booking-welcome .login-benefits{margin-bottom:0}.booking-card{padding:24px 20px}.booking-card h2{font-size:27px}.booking-page .login-header nav a:first-child{display:inline}.booking-page .login-header nav a:last-child{display:none}}
+@media(max-width:380px){.booking-fields{grid-template-columns:1fr}.booking-progress li{font-size:9px}.booking-progress b{width:23px;height:23px}.booking-review{grid-template-columns:85px minmax(0,1fr)}.booking-card{padding:22px 16px}}

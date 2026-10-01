@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan your booking | Mimi — Better stays start here</title>
+  <meta name="description" content="Plan your next stay with Mimi. Prepare your stay dates, guest details and a booking draft in one place.">
+  <meta name="theme-color" content="#fbf9f5">
+  <link rel="icon" href="assets/img/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/booking.css">
+  <script src="assets/js/login.js" defer></script>
+  <script src="assets/js/booking.js" defer></script>
+<link rel="canonical" href="https://mimiapp.co.tz/booking.html">
+</head>
+<body class="login-page booking-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="login-landscape" aria-hidden="true"><img src="assets/img/login/kilimanjaro.jpg" alt="" fetchpriority="high"></div>
+  <div class="login-shell">
+    <header class="login-header">
+      <a href="index.html" aria-label="Mimi home"><img class="login-logo" src="assets/img/mimiapp-logo.png" alt="Mimi App" width="6121" height="1671"></a>
+      <nav aria-label="Booking navigation"><a href="index.html">Back to website <span aria-hidden="true">↗</span></a><a href="login.html">Log in</a><a href="support.html">Help &amp; support</a></nav>
+    </header>
+    <main class="login-layout booking-layout" id="main">
+      <section class="login-welcome booking-welcome" aria-labelledby="welcome-title">
+        <p class="login-eyebrow"><span></span> YOUR NEXT STAY STARTS HERE</p>
+        <h1 id="welcome-title">A little escape.<br>A <em>better stay.</em></h1>
+        <p class="login-description">From quiet mountain mornings to wide-open plains.<br>Plan a stay that feels like you, with Mimi.</p>
+        <ul class="login-benefits"><li><span aria-hidden="true">▦</span> Choose your stay</li><li><span aria-hidden="true">♡</span> Make it yours</li><li><span aria-hidden="true">↗</span> Explore more</li></ul>
+        <section class="destination-carousel" aria-roledescription="carousel" aria-label="Inspired by Tanzania">
+          <div class="destination-slides" aria-live="off">
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="1 of 4: Serengeti">
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>Room to explore.</h2><p>Extraordinary stays begin with a little more freedom.</p><strong>Serengeti plains</strong></div>
+              <img src="assets/img/login/serengeti.jpg" alt="Open grasslands and scattered trees on the Serengeti plains" width="960" height="720">
+            </article>
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="2 of 4: Tanzanite" hidden>
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>Every detail, a gem.</h2><p>Make every guest experience feel one of a kind.</p><strong>Tanzanite</strong></div>
+              <img class="gem-photo" src="assets/img/login/tanzanite.jpg" alt="Blue-violet Tanzanite crystals from Tanzania" width="500" height="778">
+            </article>
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="3 of 4: Mount Meru" hidden>
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>A fresh perspective.</h2><p>See your whole property. Make space for what comes next.</p><strong>Mount Meru</strong></div>
+              <img src="assets/img/login/meru.jpg" alt="Mount Meru rising above the clouds, seen from Little Meru" width="960" height="540">
+            </article>
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="4 of 4: Giraffe" hidden>
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>Stand a little taller.</h2><p>Give your hospitality the attention it deserves.</p><strong>The graceful giraffe</strong><small class="image-credit">© <a href="https://gileslaurent.com">Giles Laurent, gileslaurent.com</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></small></div>
+              <img class="giraffe-photo" src="assets/img/login/giraffe.jpg" alt="A giraffe walking in Serengeti National Park" width="500" height="889">
+            </article>
+          </div>
+          <div class="carousel-controls" hidden>
+            <div class="carousel-dots" aria-label="Choose a slide"><button aria-label="Show Serengeti plains" aria-pressed="true"></button><button aria-label="Show Tanzanite" aria-pressed="false"></button><button aria-label="Show Mount Meru" aria-pressed="false"></button><button aria-label="Show giraffe" aria-pressed="false"></button></div>
+            <div class="carousel-arrows"><button data-carousel="previous" aria-label="Previous slide">←</button><button data-carousel="pause" aria-label="Pause slideshow">Ⅱ</button><button data-carousel="next" aria-label="Next slide">→</button></div>
+          </div>
+        </section>
+      </section>
+      <section class="login-card booking-card" aria-labelledby="booking-title">
+        <p class="login-greeting">MAKE ROOM FOR YOUR NEXT STAY</p>
+        <h2 id="booking-title">Plan your booking</h2>
+        <p class="booking-intro">A few details. A little less planning. A better stay.<br>Fields marked * are required.</p>
+        <ol class="booking-progress" aria-label="Booking progress">
+          <li aria-current="step"><b>1</b> Your stay</li><li><b>2</b> Your details</li><li><b>3</b> Review</li>
+        </ol>
+        <form class="booking-form" novalidate>
+          <fieldset>
+            <legend tabindex="-1">Where would you like to stay?</legend>
+            <div class="booking-fields">
+              <div class="booking-field full"><label for="property">Property or destination *</label><input id="property" name="property" type="text" placeholder="Hotel, lodge, camp or destination" maxlength="150" required><small>Enter your preferred property. This is not a live availability search.</small></div>
+              <div class="booking-field full"><label for="stayType">Your kind of stay *</label><select id="stayType" name="stayType" required><option value="">Choose a stay type</option>Hotel</option><option>Safari lodge</option><option>Safari camp</option><option>Resort</option><option>Apartment or villa</option><option>No preference</option></select></div>
+              <div class="booking-field"><label for="checkin">Check-in *</label><input id="checkin" name="checkin" type="date" required></div>
+              <div class="booking-field"><label for="checkout">Check-out *</label><input id="checkout" name="checkout" type="date" required></div>
+              <div class="booking-field"><label for="adults">Adults *</label><input id="adults" name="adults" type="number" inputmode="numeric" value="2" min="1" max="99" step="1" required></div>
+              <div class="booking-field"><label for="children">Children *</label><input id="children" name="children" type="number" inputmode="numeric" value="0" min="0" max="99" step="1" required></div>
+              <div class="booking-field full"><label for="rooms">Rooms or units *</label><input id="rooms" name="rooms" type="number" inputmode="numeric" value="1" min="1" max="99" step="1" required></div>
+            </div>
+            <p class="stay-summary" role="status"><span aria-hidden="true">☷</span><span id="stay-summary-text">Choose your dates to plan your stay.</span></p>
+          </fieldset>
+          <fieldset hidden disabled>
+            <legend tabindex="-1">Who is joining us?</legend>
+            <div class="booking-fields">
+              <div class="booking-field full"><label for="guestName">Full name *</label><input id="guestName" name="guestName" type="text" autocomplete="name" maxlength="120" placeholder="Your full name" required></div>
+              <div class="booking-field full"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" required></div>
+              <div class="booking-field full"><label for="phone">Phone number <span>(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+255 …"></div>
+              <div class="booking-field full"><label for="requests">Special requests <span>(optional)</span></label><textarea id="requests" name="requests" rows="4" maxlength="1500" placeholder="Arrival time, accessibility needs or anything else to share…"></textarea><small>Requests are subject to the property's confirmation. Do not include payment details or identity documents.</small></div>
+            </div>
+          </fieldset>
+          <fieldset hidden disabled>
+            <legend tabindex="-1">Review your booking draft</legend>
+            <div class="booking-review-heading"><h3>Your stay, at a glance</h3><p>Check your details, then save a copy to share with your chosen property. You can go back to make changes.</p></div>
+            <dl class="booking-review"></dl>
+          </fieldset>
+          <p class="booking-error" id="booking-error" role="alert"></p>
+          <div class="booking-actions"><button class="booking-back" type="button" hidden>← Back</button><button class="login-primary booking-next" type="submit">Continue to guest details →</button></div>
+          <p class="booking-saved" id="booking-saved" role="status"></p>
+        </form>
+        <noscript><p class="booking-notice">Please enable JavaScript to prepare a booking draft. You can also contact your chosen property directly.</p></noscript>
+        <p class="booking-notice"><strong>Booking preview · No reservation is made</strong>This form stays in your browser. It does not send your details, check availability, confirm prices or collect payment. Contact your chosen property to complete a booking. <a href="privacy.html">Privacy policy</a></p>
+        <p class="booking-support">Manage a property? <a href="login.html">Log in to Mimi →</a></p>
+      </section>
+    </main>
+    <footer class="login-footer">
+      <div class="login-footer-links"><a href="index.html">Website</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="about.html">About Mimi</a>
+        <details class="photo-credits"><summary>Photo credits</summary><div>
+          <p>Photos via Wikimedia Commons, displayed cropped; Kilimanjaro has a light ivory overlay. Photographic adaptations retain their respective licenses.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:Kilimanjaro_from_Amboseli.jpg">Kilimanjaro</a> © Sergey Pesterev / Wikimedia Commons — <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:Serengeti_-_plains.jpg">Serengeti</a> © tommorphy — <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:Tanzanite_.jpg">Tanzanite</a> © Parent Géry — <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:Mount_Meru_Tanzania_July_2025.jpg">Mount Meru</a> © AmyAbroad — <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+          <p><a href="https://commons.wikimedia.org/wiki/File:007_Giraffe_walking_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg">Giraffe</a> © <a href="https://gileslaurent.com">Giles Laurent, gileslaurent.com</a> — <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+        </div></details>
+      </div>
+      <p>© <span id="login-year">2026</span> Mimi is a product of Insync Technologies Company Limited</p>
+    </footer>
+  </div>
+</body>
+</html>

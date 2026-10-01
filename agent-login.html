@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Portal Login | Mimi</title>
+  <meta name="description" content="Sign in to the Mimi agent portal with your agency credentials.">
+  <meta name="theme-color" content="#fbf9f5">
+  <link rel="icon" href="assets/img/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/get-started.css">
+  <script src="assets/js/login.js" defer></script>
+  <script src="assets/js/enquiry-config.js" defer></script>
+<script src="assets/js/get-started.js" defer></script>
+<link rel="canonical" href="https://mimiapp.co.tz/agent-login.html">
+<meta name="robots" content="noindex,follow">
+<link rel="stylesheet" href="assets/css/auth.css">
+<script src="assets/js/auth-config.js"></script>
+<script src="assets/js/auth-theme.js"></script>
+<script src="assets/js/auth.js" defer></script>
+<link rel="stylesheet" href="assets/css/portal-design.css">
+  <script>
+    (function () {
+      var target = 'https://app.mimiapp.co.tz/agency/login' + location.search + location.hash;
+      location.replace(target);
+    })();
+  </script>
+</head>
+<body class="portal-page partner-portal" data-auth-role="agent">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="portal-header"><a href="index.html" aria-label="Mimi home"><img class="portal-logo" src="assets/img/mimiapp-logo.png" alt="Mimi App" width="6121" height="1671"></a><span class="portal-label">TRAVEL PARTNERS</span><nav aria-label="Portal navigation"><a href="index.html">Website ↗</a><a href="support.html#support-contact">Need help?</a></nav></header>
+<main id="main" class="portal-layout">
+<section class="portal-story" aria-labelledby="story-title">
+<div class="partner-intro"><span class="portal-eyebrow">THE MIMI AGENT PORTAL</span><h1 id="story-title">Behind every<br>great journey,<br><em>a great partner.</em></h1><p>A dedicated entry point for travel agents and tour operators working with Mimi properties.</p><div class="partner-route" aria-label="Connecting travel partners with hospitality teams"><span>Your agency</span><i aria-hidden="true">↔</i><span>Mimi properties</span></div></div>
+<section class="destination-carousel" style="display:none;" aria-roledescription="carousel" aria-label="Inspired by Tanzania">
+          <div class="destination-slides" aria-live="off">
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="1 of 4: Serengeti">
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>Room to explore.</h2><p>Extraordinary stays begin with a little more freedom.</p><strong>Serengeti plains</strong></div>
+              <img src="assets/img/login/serengeti.jpg" alt="Open grasslands and scattered trees on the Serengeti plains" width="960" height="720">
+            </article>
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="2 of 4: Tanzanite" hidden>
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>Every detail, a gem.</h2><p>Make every guest experience feel one of a kind.</p><strong>Tanzanite</strong></div>
+              <img class="gem-photo" src="assets/img/login/tanzanite.jpg" alt="Blue-violet Tanzanite crystals from Tanzania" width="500" height="778">
+            </article>
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="3 of 4: Mount Meru" hidden>
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>A fresh perspective.</h2><p>See your whole property. Make space for what comes next.</p><strong>Mount Meru</strong></div>
+              <img src="assets/img/login/meru.jpg" alt="Mount Meru rising above the clouds, seen from Little Meru" width="960" height="540">
+            </article>
+            <article class="destination-slide" role="group" aria-roledescription="slide" aria-label="4 of 4: Giraffe" hidden>
+              <div><span class="destination-kicker">INSPIRED BY TANZANIA</span><h2>Stand a little taller.</h2><p>Give your hospitality the attention it deserves.</p><strong>The graceful giraffe</strong><small class="image-credit">© <a href="https://gileslaurent.com">Giles Laurent, gileslaurent.com</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></small></div>
+              <img class="giraffe-photo" src="assets/img/login/giraffe.jpg" alt="A giraffe walking in Serengeti National Park" width="500" height="889">
+            </article>
+          </div>
+          <div class="carousel-controls" hidden>
+            <div class="carousel-dots" aria-label="Choose a slide"><button aria-label="Show Serengeti plains" aria-pressed="true"></button><button aria-label="Show Tanzanite" aria-pressed="false"></button><button aria-label="Show Mount Meru" aria-pressed="false"></button><button aria-label="Show giraffe" aria-pressed="false"></button></div>
+            <div class="carousel-arrows"><button data-carousel="previous" aria-label="Previous slide">←</button><button data-carousel="pause" aria-label="Pause slideshow">Ⅱ</button><button data-carousel="next" aria-label="Next slide">→</button></div>
+          </div>
+        </section>
+</section>
+<section class="portal-access" aria-labelledby="login-title">
+<nav class="portal-switch" aria-label="Choose your sign-in area"><a href="login.html">Property team</a><a href="agent-login.html" aria-current="page">Travel agent</a></nav>
+<div class="portal-form-heading"><img class="portal-form-logo" src="assets/img/mimiapp-logo.png" alt="Mimi App" width="6121" height="1671"><span class="portal-eyebrow">PARTNER ACCESS</span><h2 id="login-title">Your next journey<br>starts here.</h2><p>Use your agency credentials. This sign-in is separate from the property-team workspace.</p></div>
+<form class="auth-form" id="login-form" method="post">
+          <label for="auth-username">Agency email or username</label><input id="auth-username" name="username" autocomplete="username" required maxlength="254" placeholder="Enter your email or username">
+          <label for="auth-password">Password</label><div class="auth-password-wrap"><input id="auth-password" name="password" type="password" autocomplete="current-password" required maxlength="1024" placeholder="Enter your password"><button type="button" class="password-toggle" aria-controls="auth-password" aria-pressed="false">Show</button></div>
+          <button class="login-primary" type="submit" disabled>Login <span aria-hidden="true">→</span></button>
+        </form>
+<p class="auth-message" role="status" aria-live="polite"></p>
+<div class="portal-form-help"><span>Email verification follows sign-in</span><a href="support.html#support-contact">Login help ↗</a></div>
+<p class="auth-integration-note">Agent authentication is not connected yet. Use the existing agent portal below while setup is completed.</p>
+<a class="portal-live-link" href="https://app.mimiapp.co.tz/agency/login">Open existing agent portal ↗</a>
+<div class="portal-onboarding"><strong>New to the partner network?</strong><p>Talk to our team about agency access.</p><a href="contact.html">Contact Mimi ↗</a></div>
+<noscript><p>Please enable JavaScript to use this sign-in form, or open the existing portal above.</p></noscript>
+</section></main>
+<footer class="portal-footer"><div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div><p>© <span id="login-year">2026</span> Mimi is a product of Insync Technologies Company Limited</p></footer>
+</body></html>

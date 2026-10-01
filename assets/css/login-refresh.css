@@ -1,0 +1,37 @@
+/* Shared property-team and travel-agent sign-in design. */
+.login-shell {max-width:1360px;padding:0 clamp(22px,4vw,60px)}
+.login-header {padding:25px 0;border-bottom:1px solid #214e3320}
+.login-header nav {font-size:.8rem}
+.login-layout {grid-template-columns:minmax(0,1.1fr) minmax(360px,.85fr);gap:clamp(36px,6vw,90px);padding:42px 0 52px}
+.login-welcome h1 {font-size:clamp(42px,5.4vw,76px);line-height:1.06;max-width:620px;margin-bottom:24px}
+.login-eyebrow {font-size:.65rem;line-height:1.7;letter-spacing:.13em}
+.login-description {font-size:1rem;max-width:500px;line-height:1.8}
+.login-benefits {gap:18px;flex-wrap:wrap;font-size:.74rem;margin:25px 0 30px}
+.destination-carousel {max-width:520px;border-radius:22px}
+.login-card {background:#fffefbf5;border:1px solid #dce4d8;border-radius:28px;padding:36px clamp(24px,3.5vw,44px);box-shadow:0 24px 70px #123b311a;text-align:left;position:relative;overflow:hidden}
+.login-card::before {content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#0f7a5a 65%,#e8a33d 65%)}
+.auth-card-logo {display:block;width:145px;margin:0 0 28px}
+.login-greeting {font-size:.66rem;letter-spacing:.13em;margin-bottom:10px}
+.login-card h2 {font-size:clamp(1.8rem,2.7vw,2.5rem);margin-bottom:12px}
+.login-card-intro {font-size:.9rem;line-height:1.65;margin-bottom:22px}
+.auth-form {margin-top:0}.auth-form label {font-size:.84rem;margin-top:18px}
+.auth-form input {min-height:52px;font-size:1rem;border-radius:12px;background:#f7faf6}
+.auth-form input:focus {outline:2px solid #0f7a5a;outline-offset:2px}
+.password-toggle {font-size:.78rem;min-height:44px;top:4px}
+.auth-form .login-primary {font-size:.94rem;min-height:52px;border-radius:12px;margin-top:24px}
+.login-primary:hover {transform:none}
+.auth-integration-note {font-size:.73rem;line-height:1.6;margin:18px 0}
+.auth-message {font-size:.85rem}.login-help {font-size:.8rem}
+.agent-portal {padding:16px 0;border-top:1px solid #dce4d8;border-bottom:1px solid #dce4d8;margin:20px 0;font-size:.84rem}
+.agent-existing {font-size:.8rem;margin:16px 0}.agent-existing a {text-decoration:underline;text-underline-offset:4px;color:#0f654d}
+.login-new {justify-content:flex-start;font-size:.82rem;margin-top:20px;padding-top:18px}
+.login-app-note {font-size:.71rem;line-height:1.6;margin-top:18px}
+.login-footer {font-size:.7rem;line-height:1.7;gap:26px}.login-footer>p {max-width:390px}
+.auth-code-help,.otp-timer {font-size:.8rem;line-height:1.6}.otp-resend {font-size:.85rem;padding-left:0}
+html[data-auth-theme=dark] .login-header,html[data-auth-theme=dark] .agent-portal {border-color:#44675a}
+html[data-auth-theme=dark] .login-card {background:#0b352bf5;border-color:#44675a}
+html[data-auth-theme=dark] .agent-existing a {color:#d8eebf}
+html[data-auth-theme=dark] .auth-form input:focus {outline-color:#f4cd8a}
+@media(max-width:900px) {.login-layout {gap:32px;grid-template-columns:minmax(0,1fr) minmax(330px,1fr)}.login-benefits {gap:12px}.login-welcome h1 {font-size:48px}.destination-slide {grid-template-columns:1fr}.destination-slide img {height:150px}.destination-slide>div {padding:12px}.destination-slide p {display:none}.destination-slide h2 {margin:8px 0}.login-footer {flex-direction:column;gap:12px}}
+@media(max-width:700px) {.login-layout {display:flex;flex-direction:column;max-width:520px;padding:28px 0 36px;gap:28px}.login-welcome {width:100%}.login-welcome h1 {font-size:40px;margin-bottom:16px}.login-description {font-size:.9rem}.login-eyebrow {margin-bottom:16px}.login-benefits {margin-bottom:0}.destination-carousel {display:none}.login-card {width:100%;padding:28px 24px}.login-header nav {font-size:.72rem;gap:14px}.login-header nav a:first-child {display:block}.login-logo {width:125px}.auth-card-logo {width:130px;margin-bottom:22px}.login-footer-links {gap:14px}}
+@media(max-width:380px) {.login-shell {padding:0 16px}.login-header {gap:12px}.login-header nav {flex-direction:column;gap:7px}.login-card {padding:26px 20px}.login-new {flex-wrap:wrap}}
